@@ -36,4 +36,4 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: perts/partida-05-ci:latest
+        tags: perts/partida-05-ci:{$GITHUB_SHA}
