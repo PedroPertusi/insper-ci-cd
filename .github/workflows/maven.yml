@@ -48,4 +48,4 @@ jobs:
         script: |
           docker stop partida-aula
           docker rm --force partida-aula
-          docker run -d -p 8080:8080 --name partida-aula perts/partida-06-ci:${{ github.sha }}
+          docker run -e MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }} -d -p 8080:8080 --name partida-aula perts/partida-06-ci:${{ github.sha }}
