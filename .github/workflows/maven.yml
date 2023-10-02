@@ -36,4 +36,16 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: perts/partida-05-ci:${{ github.sha }}
+        tags: perts/partida-06-ci:${{ github.sha }}
+
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST_TEST }}
+        username: "ec2-user"
+        key: ${{ secrets.KEY_TEST }}
+        port: 22
+        script: |
+          docker stop partida-aula
+          docker rm --force partida-aula
+          docker run -d -p 8080:8080 --name partida-aula perts/partida-06-ci:${{ github.sha }}
