@@ -12,6 +12,7 @@
 	<artifactId>partida</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>partida</name>
+	
 	<description>Demo project for Spring Boot</description>
 	
 	<properties>
