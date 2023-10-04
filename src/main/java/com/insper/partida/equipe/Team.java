@@ -13,6 +13,7 @@ import java.util.List;
 @Setter
 @Document("team")
 public class Team {
+    
 
     @Id
     private String id;
